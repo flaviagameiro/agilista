@@ -32,10 +32,11 @@ Pergunte só o que faltar:
 | Squad | Projeto Jira | Board Kaizen | Slug da retro |
 |---|---|---|---|
 | Enterprise / Analytics | `CORE` | [1015](https://ploomes.atlassian.net/jira/software/c/projects/CORE/boards/1015) | `enterprise-analytics` |
-| N2 | _preencher_ | _preencher_ | _preencher_ |
+| N2 | `STEC` (Suporte Técnico Projetos) | [1413](https://ploomes.atlassian.net/jira/software/projects/STEC/boards/1413) | `n2` (label usada; confirmar slug no link da retro) |
 | Plataforma | `PLAT` | _preencher_ | `plataforma` (label usada; confirmar slug no link da retro) |
 
-Se a squad não estiver na tabela, pergunte o projeto. Depois da execução, complete a linha
+Se a squad não estiver na tabela, pergunte o projeto. Não deduza pelo nome: os projetos `SUP` ("N2")
+e `AGIL` não têm o tipo Kaizen. O Kaizen da N2 fica no `STEC`. Depois da execução, complete a linha
 neste arquivo. Nunca crie itens no projeto de outra squad sem confirmação explícita (RF03).
 
 ## Passo a passo
@@ -97,7 +98,7 @@ Texto puro é recusado com "não é um conteúdo válido do formato de documento
 ### 4. Mover para Tarefas pendentes
 
 O item nasce em **Backlog**, que não aparece no board Kanban. Use `getTransitionsForJiraIssue`
-e aplique a transição que leva a **Tarefas pendentes**. No CORE e no PLAT, a transição é a `7` ("Priorizar").
+e aplique a transição que leva a **Tarefas pendentes**. No CORE, no PLAT e no STEC, a transição é a `7` ("Priorizar"). Ela também pode ir direto no `createJiraIssue` (`transition: {"id": "7"}`).
 Em outros projetos o ID pode mudar.
 
 ### 5. Conferir e registrar
@@ -117,3 +118,4 @@ e ofereça mover a história de origem para Feito.
 |---|---|---|---|---|
 | 28/10/2026 | Enterprise / Analytics | [-P22oNBFpDAA_aV19UO3](https://ploomes-developers.web.app/agile/retro/enterprise-analytics/-P22oNBFpDAA_aV19UO3) | MTC-44 | CORE-4112 a CORE-4118 |
 | 28/10/2026 | Plataforma | _link não informado_ | MTC-46 | PLAT-637 a PLAT-644 |
+| 28/10/2026 | N2 | _link não informado_ | MTC-45 | STEC-546 a STEC-553 |
