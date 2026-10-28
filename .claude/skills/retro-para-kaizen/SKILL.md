@@ -33,7 +33,7 @@ Pergunte só o que faltar:
 |---|---|---|---|
 | Enterprise / Analytics | `CORE` | [1015](https://ploomes.atlassian.net/jira/software/c/projects/CORE/boards/1015) | `enterprise-analytics` |
 | N2 | _preencher_ | _preencher_ | _preencher_ |
-| Plataforma | _preencher_ | _preencher_ | _preencher_ |
+| Plataforma | `PLAT` | _preencher_ | `plataforma` (label usada; confirmar slug no link da retro) |
 
 Se a squad não estiver na tabela, pergunte o projeto. Depois da execução, complete a linha
 neste arquivo. Nunca crie itens no projeto de outra squad sem confirmação explícita (RF03).
@@ -90,10 +90,14 @@ crie normalmente e cite o item antigo como relacionado.
 
 Depois, `editJiraIssue` com `{"customfield_11250": "<texto integral do card>"}`.
 
+No PLAT, `customfield_11250` está na tela de criação e exige ADF: passe direto em `additional_fields`
+como `{"type": "doc", "version": 1, "content": [{"type": "paragraph", "content": [{"type": "text", "text": "..."}]}]}`.
+Texto puro é recusado com "não é um conteúdo válido do formato de documento da Atlassian (ADF)".
+
 ### 4. Mover para Tarefas pendentes
 
 O item nasce em **Backlog**, que não aparece no board Kanban. Use `getTransitionsForJiraIssue`
-e aplique a transição que leva a **Tarefas pendentes**. No CORE, a transição é a `7` ("Priorizar").
+e aplique a transição que leva a **Tarefas pendentes**. No CORE e no PLAT, a transição é a `7` ("Priorizar").
 Em outros projetos o ID pode mudar.
 
 ### 5. Conferir e registrar
@@ -112,3 +116,4 @@ e ofereça mover a história de origem para Feito.
 | Data | Squad | Retro | História | Itens |
 |---|---|---|---|---|
 | 28/10/2026 | Enterprise / Analytics | [-P22oNBFpDAA_aV19UO3](https://ploomes-developers.web.app/agile/retro/enterprise-analytics/-P22oNBFpDAA_aV19UO3) | MTC-44 | CORE-4112 a CORE-4118 |
+| 28/10/2026 | Plataforma | _link não informado_ | MTC-46 | PLAT-637 a PLAT-644 |
